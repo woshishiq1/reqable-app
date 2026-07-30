@@ -2,110 +2,80 @@
 
 ⚠️ **注意：Reqable是非开源项目，本仓库仅用来管理需求和用户反馈。**
 
-[Reqable](https://reqable.com/)是新一代API调试 + API测试一站化解决方案。Reqable具有全平台、免登录、轻量级、高性能、无广告等优点，理念是让API更快更简单，助力程序开发和测试人员提高生产力！现已支持Windows、Mac、Linux、Android和iOS五大平台。
+[Reqable](https://reqable.com/) 是新一代API调试 + API测试一站化解决方案。Reqable具有全平台、免登录、轻量级、高性能、无广告等优点，理念是让API更快更简单，助力程序开发和测试人员提高生产力！现已支持 `Windows`、`Mac`、`Linux`、`Android` 和 `iOS` 五大平台。
 
-![](./arts/products.webp)
+Reqable = API抓包工具 + API测试工具，两者深度整合，抓测一体，操作简单，一个工具顶多个工具。
 
-官方网站：https://reqable.com
+![](arts/products_zh.png)
 
-## Reqable是什么？
+Reqable 绝大多数功能均可免费使用，没有试用期限，社区版本适合轻度使用者；如果你是功能重度使用者，可能需要购买我们的高级会员。
 
-**Reqable = Fiddler + Charles + Postman**
+欢迎访问我们的官方网站：https://reqable.com
 
-Reqable集成了流量分析和API测试的核心功能，并深度整合，一个工具顶多个工具。Reqable基于Flutter和C++开发，相比同类产品具有极大的性能优势。
+# API调试
 
-![](./arts//benchmark_zh_01.png)
+Reqable采用经典的MITM（中间人）方式对HTTP(S)请求进行抓包，在桌面端使用系统代理的方式拦截流量，在移动端则使用VPN的方式拦截流量。Reqable支持对抓包数据进行调试操作，例如重放、编辑、断点、重写、脚本等。
 
-*以上数据是在MacBook Pro 2017设备上测试，启动时间是通过录屏后计算帧差得出，内存使用为应用启动后直接置于后台再计算得出。*
+![](arts/screenshot_zh_01.png)
 
-#### 流量分析
+# API测试
 
-Reqable采用经典的MITM代理方式进行流量分析，支持重写、脚本（Python）、断点和重放等数据调试功能。
+Reqable可以编辑、发送和管理 `HTTP`、`WebSocket`、`SSE` 和 `GRPC`（即将上线）请求，支持API集合，环境变量，文档管理和云同步等功能。
 
-- [x] 支持HTTP/1.x, HTTP2协议版本，HTTP3(QUIC)暂不支持。
-- [x] 支持HTTP/HTTPS/Socks4/Socks4a/Socks5代理方式。
-- [x] 支持HTTPS，TLSv1.1、TLSv1.2和TLSv1.3加密协议。
-- [x] 支持IPv4和IPv6协议。
-- [x] 支持基于HTTP1升级的WebSocket协议。
-- [x] 支持HTTP/HTTPS二级代理（分析境外流量）。
-- [x] 创建API：支持从调试列表创建API进行测试。
-- [x] 搜索筛选：多条件搜索，应用、域名、协议、数据类型等筛选方式。
-- [x] 重写功能：预设规则对指定请求或响应进行重定向、替换或者修改。
-- [x] 断点功能：对请求或响应进行实时断点操作，比如屏蔽，挂起或修改替换数据等。
-- [x] 脚本功能：支持编写Python脚本处理实时请求或响应。
-- [x] 网关功能：对指定请求或响应进行屏蔽，挂起等操作。
-- [x] 镜像功能：对指定域名和端口配置镜像映射。
-- [x] 反向代理：项目配置反向代理，免证书授信调试HTTPS流量。
-- [x] 自动高亮：支持设定自定义规则对请求进行多种颜色高亮。
-- [x] 重发回放：支持单个或多个请求进行回放测试。
-- [x] 请求对比：支持对比请求和相应数据，快速定位数据偏差。
-- [x] 历史记录：自动保存抓包的流量数据，方便回溯查看。
-- [x] 应用来源：支持流量应用来源显示和筛选，方便检测程序后门。
-- [x] HAR支持：自动关联HAR格式文件，并支持HAR导出和导入。
-- [x] SSL证书：导入自定义SSL证书，分析固定证书和双向验证请求。
+![](arts/screenshot_zh_02.png)
 
-实测截图：
+# MCP支持
 
-![](https://reqable.com/zh-CN/assets/images/capture-b83e81418424a3d474dc79673a1dfbd2.png)
+Reqable提供了内置MCP服务器，你可以将 AI助手（如 Claude、Copilot）与 Reqable 连接起来，从而实现AI驱动的接口调试、流量分析、规则创建等功能。
 
-### 2. API测试
+![](arts/screenshot_zh_03.png)
 
-Reqable可以编辑和发送HTTP请求，用来测试REST API接口，同时还支持API集合存储和历史记录等功能。
+MCP服务器代码我们是完全开源的，详见 [MCP Server](https://github.com/reqable/reqable-mcp-server)。
 
-- [x] 支持HTTP/1.1, HTTP2和HTTP3(QUIC)协议。
-- [x] API集合：支持创建创建集合目录保存和管理API，
-- [x] 集合支持：支持导入Postman、Hoppscotch、ApiPost和Apifox等集合。
-- [x] 环境变量：全局环境变量和用户自定义环境变量。
-- [x] 脚本功能：支持编写Python脚本预处理或者后处理API数据。
-- [x] 代码生成：生成Python、Java、Node等主流语言或网络库的代码。
-- [x] 批量编辑：支持批量编辑请求参数、请求头、表单等。
-- [x] 授权设置：支持API KEY、Basic Auth和Bearer Token等授权方式。
-- [x] 代理设置：支持自定义代理配置，系统代理和调试代理等。
-- [x] 性能测试：可以查看请求在不同环节的耗时数据。
-- [x] Cookie管理：自动保存Cookie或在请求头中自动加入关联的Cookie。
-- [x] 历史记录：自动保存发送的请求和响应数据，方便回溯查看
-- [x] cURL支持：从cURL创建API或者将API导出为cURL命令。
+# 极致性能
 
-实测截图：
+Reqable基于Flutter和C++开发，拒绝内置浏览器，不仅安全性高，相比同类产品还具有极大的性能优势。
 
-![](https://reqable.com/zh-CN/assets/images/rest-8000a6dcc1cd34874c852136e4113b40.png)
+- 速度快，毫秒级启动。
+- 安装空间小，不足100M。
+- 内存占用低，日常低于300M。
 
-## 下载和安装
+抓包工具性能指标
 
-Reqable官网提供了最新版本的下载：[点我查看](https://reqable.com/zh-CN/download)。如果希望下载历史版本：[点击这里](https://github.com/reqable/reqable-app/releases)。此外，在Mac系统上，Reqable提供了`Homebrew`的安装方式。
+![](arts/benchmark_zh_02.png)
 
-### Windows安装
+接口工具性能指标
 
-在Windows上，您下载的是`Setup.exe`，按照Setup安装程序指引即可。目前未提供绿色版本，主要是因为Reqable安装需要写注册表（关联har等文件格式）。
+![](arts/benchmark_zh_01.png)
 
-### Mac安装
+> 以上数据是在苹果最新的MacBook Pro M5设备上的测试结果，在硬件性能较差的设备上，Reqable的性能优势更加明显。
 
-在Mac设备上，Reqable提供了Apple芯片和Intel芯片两种架构的安装包。如果下载DMG文件，打开后拖拽进`应用程序`文件夹即可；如果是使用`Homebrew`，输入下面命令行即可自动安装：
-```shell
-brew install reqable
-```
+# 移动端版本
 
-### Linux安装
+移动端和桌面端功能基本保持一致，同时支持API调试和API测试。同时，支持手机扫码添加电脑设备，将手机流量转发到电脑端进行操作。
 
-Linux版本依赖GTK库，安装前请确认系统是否已经安装了GTK。Linux安装程序是deb文件，我们目前只提供了x64的架构版本，使用apt安装即可:
-```shell
-sudo apt install reqable-app-linux-x86_64.deb
-```
+登录后启用云端数据存储，可以在不同设备之间自动同步数据。
 
-## 移动端支持
+![](arts/screenshot_zh_04.png)
 
-Reqable移动端支持单独使用，也支持与桌面端协同使用。独立使用指的是可以单独进行流量分析、API请求测试，无需依赖桌面端；而协同模式下，移动端可以通过扫描桌面端的二维码后自动将流量转发到桌面端，无需手动配置Wifi代理，后续操作在桌面端进行。
+> 断点、重写和脚本功能担心引起滥用暂未上线。
 
-您可以从Play Store和App Store免费获取应用。
+# 安装
 
-<a href="https://play.google.com/store/apps/details?id=com.reqable.android"><img src="arts/play_store.svg" height="48"></a>
-<a href="https://apps.apple.com/app/id6473166828"><img src="arts/app_store.svg" height="48"></a>
-
-实测截图：
-
-![](/arts/screenshot_zh_03.png)
-
-*移动端支持桌面端绝大多数功能，除了调试功能担心引起滥用暂未上线。*
+|  平台 | 架构 | 格式 | 下载&安装  | 说明  |
+| ----  | ----  | ----  | ----  | ----  |
+| **Windows** | x86_64 | exe | [下载](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=exe&locale=zh-CN) | 安装版本（建议），支持 `Windows 7+`。 |
+| **Windows** | x86_64 | zip | [下载](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=zip&locale=zh-CN) | 免安装版本，支持 `Windows 7+`。 |
+| **Mac** | universal | - |  brew install reqable | 要求系统 `11.0` 及以上版本。 |
+| **Mac** | Intel Chip | dmg | [下载](https://app.reqable.com/download?platform=macos&arch=x86_64&ext=dmg&locale=zh-CN) | Intel芯片，要求系统 `11.0` 及以上版本。 |
+| **Mac** | Apple Silicon |  dmg | [下载](https://app.reqable.com/download?platform=macos&arch=arm64&ext=dmg&locale=zh-CN) | M系列芯片，要求系统 `11.0` 及以上版本。 |
+| **Linux** | x86_64 | deb | [下载](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=deb&locale=zh-CN) | 支持 `Ubuntu` 和 `Debian` 等发行版本，并要求安装 `GTK 3.0`。|
+| **Linux** | x86_64 | AppImage |[下载](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=AppImage&locale=zh-CN) | 支持 `Ubuntu` 和 `Debian` 等发行版本，并要求安装 `GTK 3.0`。|
+| **Android** | universal |  - |  [Google Play](https://play.google.com/store/apps/details?id=com.reqable.android) | 要求 `Android 5.0` 及以上系统版本。 |
+| **Android** | arm64-v8a |  apk |  [下载](https://app.reqable.com/download?platform=android&arch=arm64&ext=apk&locale=zh-CN) | 要求 `Android 5.0` 及以上系统版本。  |
+| **Android** | armeabi-v7a |  apk |  [下载](https://app.reqable.com/download?platform=android&arch=arm&ext=apk&locale=zh-CN) | 要求 `Android 5.0` 及以上系统版本。 |
+| **Android** | x86_64 |  apk |  [下载](https://app.reqable.com/download?platform=android&arch=x86_64&ext=apk&locale=zh-CN) | 要求 `Android 5.0` 及以上系统版本。 |
+| **iOS** | arm64 |  - |  [App Store](https://apps.apple.com/cn/app/id6473166828) | 要求 `iOS 13.0` 及以上系统版本。 |
 
 ## 使用文档
 https://reqable.com/zh-CN/docs/introduction

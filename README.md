@@ -1,118 +1,85 @@
 # Reqable
 
-[中文版本](./README_CN.md)
+⚠️ **Note: Reqable is not an open-source project. This repository is used solely for issue tracking, feature requests, and user feedback.**
 
-⚠️ **Note: Reqable is a non-open source project, and this repository is only used to manage requirements and user feedback.**
+[Reqable](https://reqable.com/) is a next-generation, all-in-one API debugging and testing platform. It delivers cross-platform availability, a no-login-required architecture, a lightweight footprint, high throughput, and an ad-free experience. Reqable is built to streamline API workflows for developers and QA engineers alike, with support for five major platforms: `Windows`, `macOS`, `Linux`, `Android`, and `iOS`.
 
-[Reqable](https://reqable.com/) is a new generation API debugging and testing one-stop solution. Reqable fully supports HTTP1 and HTTP2 and partially supports HTTP3(QUIC). Now available on `Windows`, `Mac`, `Linux`, `Android` and `iOS`.
+Reqable combines an API traffic capture tool with a full-featured API testing client in a single, deeply integrated environment — enabling seamless capture-and-test workflows and replacing multiple standalone tools.
 
-![](./arts/products.webp)
+![](arts/products_en.png)
 
-Website: https://reqable.com
+The majority of Reqable's features are available free of charge with no time-limited trial. The Community edition covers the needs of most individual developers; power users and teams may benefit from upgrading to the Premium tier for advanced capabilities.
 
-## What is Reqable?
+Visit our official website: https://reqable.com
 
-**Reqable = Fiddler + Charles + Postman**
+# API Debugging
 
-Reqable implements the core features of traffic analysis and API testing, and deeply integrates them. One app is worth multiple apps. Reqable is developed based on Flutter and C++ and has great performance advantages compared to similar products.
+Reqable employs a classic MITM (Man-in-the-Middle) strategy to intercept HTTP(S) traffic. On desktop platforms, it captures traffic via system-level proxy configuration; on mobile, it leverages a local VPN. Captured traffic can be inspected and manipulated through a rich set of debugging primitives: request replay, inline editing, breakpoints, URL rewriting, custom scripting, and more.
 
-![](./arts/benchmark_en_01.png)
+![](arts/screenshot_en_01.png)
 
-*The above data was tested on a MacBook Pro 2017. The startup time is calculated by calculating the frame offsets after recording the screen. The memory usage is calculated by after moving the app to the background.*
+# API Testing
 
-### 1. API Debugging
+Reqable provides a full-featured API client for composing, sending, and organizing `HTTP`, `WebSocket`, `SSE`, and `gRPC` (coming soon) requests. It includes API collections with folder-based organization, environment variables with scoped resolution, built-in API documentation authoring, and cloud synchronization across devices.
 
-Reqable uses the classic MITM proxy method for debugging and supports such as rewriting, scripting (Python), breakpoints, and replay.
+![](arts/screenshot_en_02.png)
 
-- [x] Support HTTP/1.x and HTTP2 protocol, HTTP3 (QUIC) is not supported yet.
-- [x] Support HTTP/HTTPS/Socks4/Socks4a/Socks5 proxy mode.
-- [x] Support HTTPS, TLSv1.1, TLSv1.2 and TLSv1.3 protocols.
-- [x] Support IPv4 and IPv6.
-- [x] Support WebSocket upgraded based on HTTP1.
-- [x] Support HTTP/HTTPS secondary proxy.
-- [x] Composing API: Create REST API from captured traffic list.
-- [x] Search and filter: Multi-condition search, application, domain name, protocol, data type and other filters.
-- [x] Rewriting: Perform redirection, map local, map remote, modification for requests or responses.
-- [x] Breakpoint: Perform real-time breakpoint operations on requests or responses.
-- [x] Scripting: Support for writing Python scripts to process requests or responses.
-- [x] Gateway: Perform operations such as shielding and suspending for requests or responses.
-- [x] Mirroring: Configure mirror mapping for the specified domain name and port.
-- [x] Reverse proxy: Use local reverse proxy server to debug HTTPS traffics without trusting CA certificate.
-- [x] Highlighting: Set custom rules to highlight requests in multiple colors.
-- [x] Replay: Support single or multiple requests for playback testing.
-- [x] Diff tool: Compare request and response messages, quickly locate data deviations.
-- [x] History: Automatically save the recording list for easy retrospective viewing.
-- [x] Traffic source: Detect which application the traffic is coming from.
-- [x] HAR: Automatically associate HAR files, and support HAR export and open.
-- [x] SSL Certificates: Import custom SSL certificates, analyze pinned certificates and two-way authentication requests.
+# MCP Support
 
-Screenshot:
+Reqable ships with a built-in MCP (Model Context Protocol) server, enabling AI assistants such as Claude and GitHub Copilot to interact directly with Reqable. This unlocks AI-driven workflows for API debugging, traffic inspection, rule authoring, and automated testing.
 
-![](/arts/screenshot_en_01.png)
+![](arts/screenshot_en_03.png)
 
-### 2. API Testing
+The MCP server implementation is fully open source. See the [MCP Server repository](https://github.com/reqable/reqable-mcp-server) for details.
 
-Reqable can compose API for testing and also supports features such as API collection and history.
+# Extreme Performance
 
-- [x] Supports HTTP/1.1, HTTP2 and HTTP3 (QUIC) protocols.
-- [x] API collection: Save API to collections and manage your APIs.
-- [x] Collection suppoert: Import collections from Postman and Hoppscotch.
-- [x] Environment: Global environment and user environments.
-- [x] Batch editing: Support batch editing of query parameters, request headers, forms, etc.
-- [x] Scripting: Write python script to process pre-request and post-request data.
-- [x] Code Snippet: Generate code for mainstream languages ​​or network libraries such as Python, Java, and NodeJS.
-- [x] Authorization settings: Support authorization methods such as API KEY, Basic Auth, and Bearer Token.
-- [x] Proxy settings: Support custom proxy, system proxy and debugging proxy, etc.
-- [x] Performance: You can view the time-consuming data of requests at different stages.
-- [x] Cookie management: Automatically save cookies or add cookies.
-- [x] History: Automatically save the request and response for easy retrospective viewing.
-- [x] cURL support: Create API from cURL or export API to cURL.
+Reqable is engineered with Flutter and C++, deliberately avoiding an embedded browser runtime. This architectural choice strengthens security by reducing the attack surface while yielding substantial performance gains over Electron-based alternatives.
 
-Screenshot:
+- Millisecond-level cold-start time.
+- Installation footprint under 100 MB.
+- Typical memory consumption under 300 MB during active use.
 
-![](/arts/screenshot_en_02.png)
+Packet capture performance benchmarks
 
-## Installation
+![](arts/benchmark_en_02.png)
 
-Reqable official website provides the download of the latest version: [Download Now](https://reqable.com/en-US/download). If you want to download the historical version: [Click here](https://github.com/reqable/reqable-app/releases). In addition, on Mac, Reqable provides the `Homebrew` installation.
+API client performance benchmarks
 
-### Windows Setup
+![](arts/benchmark_en_01.png)
 
-On Windows, you download `Setup.exe` and just follow the setup installation program instructions. There is currently no installation-free version available, mainly because Reqable installation requires writing the registry (associated with `har` and other file formats).
+> Benchmarks were conducted on an Apple MacBook Pro with the M5 chip. On lower-specification hardware, Reqable's performance delta is even more pronounced.
 
-### Mac Setup
+# Mobile App
 
-On Mac, Reqable provides installation packages for both Apple chip and Intel chip. If you download the DMG file, open it and drag app into the `Applications` folder; if you are using `Homebrew`, please try this command:
-```shell
-brew install reqable
-```
+The mobile edition maintains feature parity with the desktop version, offering both API debugging and API testing capabilities on the go. It supports adding a desktop peer via QR code scanning, enabling mobile traffic to be forwarded to the desktop for deeper inspection and manipulation.
 
-### Linux Setup
+With an optional account login, cloud synchronization can be enabled to automatically replicate data across all connected devices.
 
-The Linux version requires the GTK library. Please confirm whether the system has GTK installed before installation. The Linux installation program is a deb file. We currently only provide the x64 architecture version. You can install it using `apt`:
-```shell
-sudo apt install reqable-app-linux-x86_64.deb
-```
+![](arts/screenshot_en_04.png)
 
-## Mobile App
+> Breakpoint, rewrite, and scripting features are currently unavailable on mobile platforms due to platform-level security policies.
 
-The Reqable mobile can be used standalone or work with the desktop app. Standalone means that traffic recording and API testing can be performed independently without relying on the desktop. While in collaborative mode, the mobile app could automatically forward traffic to the desktop by scanning the desktop QR code without manually configuring the Wifi proxy.
+# Installation
 
-Get app for free from play store and app store.
-
-<a href="https://play.google.com/store/apps/details?id=com.reqable.android"><img src="arts/play_store.svg" height="48"></a>
-<a href="https://apps.apple.com/app/id6473166828"><img src="arts/app_store.svg" height="48"></a>
-
-Screenshots:
-
-![](/arts/screenshot_en_03.png)
-
-*Mobile app implements most of the features on the desktop, except for some with legal risks, such as rewriting.*
+| Platform | Architecture | Format | Download & Install | Notes |
+| ---- | ---- | ---- | ---- | ---- |
+| **Windows** | x86_64 | exe | [Download](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=exe&locale=en-US) | Installer version (recommended), supports `Windows 7+`. |
+| **Windows** | x86_64 | zip | [Download](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=zip&locale=en-US) | Portable version, supports `Windows 7+`. |
+| **Mac** | universal | - | brew install reqable | Requires macOS `11.0` or later. |
+| **Mac** | Intel Chip | dmg | [Download](https://app.reqable.com/download?platform=macos&arch=x86_64&ext=dmg&locale=en-US) | Intel chip, requires macOS `11.0` or later. |
+| **Mac** | Apple Silicon | dmg | [Download](https://app.reqable.com/download?platform=macos&arch=arm64&ext=dmg&locale=en-US) | M-series chip, requires macOS `11.0` or later. |
+| **Linux** | x86_64 | deb | [Download](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=deb&locale=en-US) | Supports `Ubuntu`, `Debian`, and other distributions. Requires `GTK 3.0`. |
+| **Linux** | x86_64 | AppImage | [Download](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=AppImage&locale=en-US) | Supports `Ubuntu`, `Debian`, and other distributions. Requires `GTK 3.0`. |
+| **Android** | universal | - | [Google Play](https://play.google.com/store/apps/details?id=com.reqable.android) | Requires `Android 5.0` or later. |
+| **Android** | arm64-v8a | apk | [Download](https://app.reqable.com/download?platform=android&arch=arm64&ext=apk&locale=en-US) | Requires `Android 5.0` or later. |
+| **Android** | armeabi-v7a | apk | [Download](https://app.reqable.com/download?platform=android&arch=arm&ext=apk&locale=en-US) | Requires `Android 5.0` or later. |
+| **Android** | x86_64 | apk | [Download](https://app.reqable.com/download?platform=android&arch=x86_64&ext=apk&locale=en-US) | Requires `Android 5.0` or later. |
+| **iOS** | arm64 | - | [App Store](https://apps.apple.com/cn/app/id6473166828) | Requires `iOS 13.0` or later. |
 
 ## Documentation
 https://reqable.com/en-US/docs/introduction
 
-## Thanks
-
+## Acknowledgements
 - [leanflutter](https://github.com/leanflutter)
 - [highlightjs](https://github.com/highlightjs/highlight.js)
