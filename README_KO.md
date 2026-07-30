@@ -2,101 +2,101 @@
 
 [English](README.md) | [简体中文](README_CN.md) | [繁體中文](README_ZH-HANT.md) | [日本語](README_JA.md) | [한국어](README_KO.md) | [Español](README_ES.md) | [Français](README_FR.md) | [Deutsch](README_DE.md) | [Русский](README_RU.md)
 
-⚠️ **Note: Reqable is not an open-source project. This repository is used solely for issue tracking, feature requests, and user feedback.**
+⚠️ **참고: Reqable은 오픈소스 프로젝트가 아닙니다. 이 저장소는 요구사항 관리와 사용자 피드백 용도로만 사용됩니다.**
 
-## About
+## 소개
 
-[Reqable](https://reqable.com/) is a next-generation, all-in-one API debugging and testing platform. It offers cross-platform support, a login-free architecture, a lightweight footprint, high throughput, and an ad-free experience — all designed to streamline API workflows for developers and QA engineers. Reqable supports five major platforms: `Windows`, `macOS`, `Linux`, `Android`, and `iOS`.
+[Reqable](https://reqable.com/)은 차세대 API 디버깅 + API 테스트 원스톱 솔루션입니다. Reqable은 전 플랫폼 지원, 로그인 불필요, 가볍고, 고성능, 광고 없음 등의 장점을 갖추고 있으며, API를 더 빠르고 간단하게 만들어 개발자와 테스터의 생산성을 높이는 것을 목표로 합니다. 현재 `Windows`, `Mac`, `Linux`, `Android`, `iOS` 5대 플랫폼을 지원합니다.
 
-Reqable combines an API traffic capture tool with a full-featured API testing client in a single, deeply integrated environment — enabling seamless capture-and-test workflows and replacing multiple standalone tools.
+Reqable = API 캡처 도구 + API 테스트 도구. 양자를 긴밀하게 통합하여 캡처와 테스트를 일체화했으며, 조작이 간단해 하나의 도구로 여러 도구를 대체합니다.
 
 ![](arts/products_en.png)
 
-The majority of Reqable's features are available free of charge, with no trial period. The Community edition covers the needs of most individual developers; power users and teams may benefit from upgrading to the Premium tier for advanced capabilities.
+Reqable의 대부분의 기능은 무료로 사용할 수 있으며 평가판 기간이 없습니다. 커뮤니티 버전은 라이트 유저에게 적합합니다. 헤비 유저라면 프리미엄 멤버십 구매가 필요할 수 있습니다.
 
-Visit our official website: https://reqable.com
+공식 웹사이트 방문: https://reqable.com
 
-## Contents
+## 목차
 
-- [About](#about)
-- [API Debugging](#api-debugging)
-- [API Testing](#api-testing)
-- [MCP Support](#mcp-support)
-- [Extreme Performance](#extreme-performance)
-- [Mobile App](#mobile-app)
-- [Installation](#installation)
-- [Documentation](#documentation)
-- [Acknowledgements](#acknowledgements)
+- [소개](#소개)
+- [API 디버깅](#api-디버깅)
+- [API 테스트](#api-테스트)
+- [MCP 지원](#mcp-지원)
+- [극한의 성능](#극한의-성능)
+- [모바일 앱](#모바일-앱)
+- [설치](#설치)
+- [문서](#문서)
+- [감사의 말](#감사의-말)
 
-# API Debugging
+# API 디버깅
 
-Reqable employs a classic MITM (Man-in-the-Middle) strategy to intercept HTTP(S) traffic. On desktop platforms, it captures traffic via system-level proxy configuration; on mobile, it leverages a local VPN. Captured traffic can be inspected and manipulated through a rich set of debugging primitives: request replay, inline editing, breakpoints, URL rewriting, custom scripting, and more.
+Reqable은 클래식 MITM(중간자) 방식으로 HTTP(S) 요청을 캡처합니다. 데스크톱에서는 시스템 프록시를 사용하여 트래픽을 가로채고, 모바일에서는 VPN을 사용합니다. Reqable은 캡처 데이터에 대한 디버깅 작업(재전송, 편집, 중단점, 재작성, 스크립팅 등)을 지원합니다.
 
 ![](arts/screenshot_en_01.png)
 
-# API Testing
+# API 테스트
 
-Reqable provides a full-featured API client for composing, sending, and organizing `HTTP`, `WebSocket`, `SSE`, and `gRPC` (coming soon) requests. It includes API collections with folder-based organization, environment variables with scoped resolution, built-in API documentation authoring, and cloud synchronization across devices.
+Reqable은 `HTTP`, `WebSocket`, `SSE`, `gRPC`(곧 출시 예정) 요청을 편집, 전송, 관리할 수 있으며, API 컬렉션, 환경 변수, 문서 관리, 클라우드 동기화 등의 기능을 지원합니다.
 
 ![](arts/screenshot_en_02.png)
 
-# MCP Support
+# MCP 지원
 
-Reqable ships with a built-in MCP (Model Context Protocol) server, enabling AI assistants such as Claude and GitHub Copilot to interact directly with Reqable. This unlocks AI-driven workflows for API debugging, traffic inspection, rule authoring, and automated testing.
+Reqable은 내장 MCP 서버를 제공하여 AI 어시스턴트(Claude, Copilot 등)를 Reqable에 연결함으로써, AI 기반 API 디버깅, 트래픽 분석, 규칙 생성 등을 실현할 수 있습니다.
 
 ![](arts/screenshot_en_03.png)
 
-The MCP server implementation is fully open source. See the [MCP Server repository](https://github.com/reqable/reqable-mcp-server) for details.
+MCP 서버 코드는 완전히 오픈소스입니다. 자세한 내용은 [MCP Server](https://github.com/reqable/reqable-mcp-server)를 참조하세요.
 
-# Extreme Performance
+# 극한의 성능
 
-Reqable is engineered with Flutter and C++, deliberately avoiding an embedded browser runtime. This architectural choice strengthens security by reducing the attack surface while yielding substantial performance gains over Electron-based alternatives.
+Reqable은 Flutter와 C++로 개발되었으며, 브라우저 내장을 배제했습니다. 이로 인해 높은 보안성을 갖추었을 뿐만 아니라, 동종 제품 대비 뛰어난 성능 우위를 자랑합니다.
 
-- Millisecond-level cold-start time.
-- Installation footprint under 100 MB.
-- Typical memory consumption under 300 MB during active use.
+- 빠른 속도, 밀리초 수준의 시작.
+- 설치 공간이 작아 100M 미만.
+- 메모리 사용량이 낮아 평소 300M 미만.
 
-Packet capture performance benchmarks
+패킷 캡처 성능 벤치마크
 
 ![](arts/benchmark_en_02.png)
 
-API client performance benchmarks
+API 클라이언트 성능 벤치마크
 
 ![](arts/benchmark_en_01.png)
 
-> Benchmarks were conducted on an Apple MacBook Pro with the M5 chip. On lower-specification hardware, Reqable's performance delta is even more pronounced.
+> 벤치마크는 M5 칩이 탑재된 Apple MacBook Pro에서 수행되었습니다. 하드웨어 성능이 낮은 기기에서는 Reqable의 성능 우위가 더욱 두드러집니다.
 
-# Mobile App
+# 모바일 앱
 
-The mobile edition maintains feature parity with the desktop version, offering both API debugging and API testing capabilities on the go. It supports adding a desktop peer via QR code scanning, enabling mobile traffic to be forwarded to the desktop for deeper inspection and manipulation.
+모바일 버전과 데스크톱 버전의 기능은 거의 동일하며, API 디버깅과 API 테스트를 모두 지원합니다. 또한 QR 코드를 스캔하여 PC 기기를 추가하고, 모바일 트래픽을 PC로 전달하여 작업할 수 있습니다.
 
-With an optional account login, cloud synchronization can be enabled to automatically replicate data across all connected devices.
+로그인 후 클라우드 데이터 저장을 활성화하면, 서로 다른 기기 간에 데이터를 자동으로 동기화할 수 있습니다.
 
 ![](arts/screenshot_en_04.png)
 
-> Breakpoint, rewrite, and scripting features are currently unavailable on mobile platforms due to platform-level security policies.
+> 중단점, 재작성 및 스크립팅 기능은 악용 우려로 인해 현재 제공되지 않습니다.
 
-# Installation
+# 설치
 
-| Platform | Architecture | Format | Download & Install | Notes |
+| 플랫폼 | 아키텍처 | 형식 | 다운로드 및 설치 | 비고 |
 | ---- | ---- | ---- | ---- | ---- |
-| **Windows** | x86_64 | exe | [Download](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=exe&locale=en-US) | Installer version (recommended), supports `Windows 7+`. |
-| **Windows** | x86_64 | zip | [Download](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=zip&locale=en-US) | Portable version, supports `Windows 7+`. |
-| **Mac** | universal | - | brew install reqable | Requires macOS `11.0` or later. |
-| **Mac** | Intel Chip | dmg | [Download](https://app.reqable.com/download?platform=macos&arch=x86_64&ext=dmg&locale=en-US) | Intel chip, requires macOS `11.0` or later. |
-| **Mac** | Apple Silicon | dmg | [Download](https://app.reqable.com/download?platform=macos&arch=arm64&ext=dmg&locale=en-US) | M-series chip, requires macOS `11.0` or later. |
-| **Linux** | x86_64 | deb | [Download](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=deb&locale=en-US) | Supports `Ubuntu`, `Debian`, and other distributions. Requires `GTK 3.0`. |
-| **Linux** | x86_64 | AppImage | [Download](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=AppImage&locale=en-US) | Supports `Ubuntu`, `Debian`, and other distributions. Requires `GTK 3.0`. |
-| **Android** | universal | - | [Google Play](https://play.google.com/store/apps/details?id=com.reqable.android) | Requires `Android 5.0` or later. |
-| **Android** | arm64-v8a | apk | [Download](https://app.reqable.com/download?platform=android&arch=arm64&ext=apk&locale=en-US) | Requires `Android 5.0` or later. |
-| **Android** | armeabi-v7a | apk | [Download](https://app.reqable.com/download?platform=android&arch=arm&ext=apk&locale=en-US) | Requires `Android 5.0` or later. |
-| **Android** | x86_64 | apk | [Download](https://app.reqable.com/download?platform=android&arch=x86_64&ext=apk&locale=en-US) | Requires `Android 5.0` or later. |
-| **iOS** | arm64 | - | [App Store](https://apps.apple.com/cn/app/id6473166828) | Requires `iOS 13.0` or later. |
+| **Windows** | x86_64 | exe | [다운로드](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=exe&locale=en-US) | 설치 관리자 버전(권장), `Windows 7+` 지원. |
+| **Windows** | x86_64 | zip | [다운로드](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=zip&locale=en-US) | 휴대용 버전, `Windows 7+` 지원. |
+| **Mac** | universal | - | brew install reqable | macOS `11.0` 이상 필요. |
+| **Mac** | Intel Chip | dmg | [다운로드](https://app.reqable.com/download?platform=macos&arch=x86_64&ext=dmg&locale=en-US) | Intel 칩, macOS `11.0` 이상 필요. |
+| **Mac** | Apple Silicon | dmg | [다운로드](https://app.reqable.com/download?platform=macos&arch=arm64&ext=dmg&locale=en-US) | M 시리즈 칩, macOS `11.0` 이상 필요. |
+| **Linux** | x86_64 | deb | [다운로드](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=deb&locale=en-US) | `Ubuntu`, `Debian` 등 배포판 지원. `GTK 3.0` 필요. |
+| **Linux** | x86_64 | AppImage | [다운로드](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=AppImage&locale=en-US) | `Ubuntu`, `Debian` 등 배포판 지원. `GTK 3.0` 필요. |
+| **Android** | universal | - | [Google Play](https://play.google.com/store/apps/details?id=com.reqable.android) | `Android 5.0` 이상 필요. |
+| **Android** | arm64-v8a | apk | [다운로드](https://app.reqable.com/download?platform=android&arch=arm64&ext=apk&locale=en-US) | `Android 5.0` 이상 필요. |
+| **Android** | armeabi-v7a | apk | [다운로드](https://app.reqable.com/download?platform=android&arch=arm&ext=apk&locale=en-US) | `Android 5.0` 이상 필요. |
+| **Android** | x86_64 | apk | [다운로드](https://app.reqable.com/download?platform=android&arch=x86_64&ext=apk&locale=en-US) | `Android 5.0` 이상 필요. |
+| **iOS** | arm64 | - | [App Store](https://apps.apple.com/cn/app/id6473166828) | `iOS 13.0` 이상 필요. |
 
-## Documentation
+## 문서
 https://reqable.com/en-US/docs/introduction
 
-## Acknowledgements
+## 감사의 말
 
 <p align="left">
   <a href="https://github.com/RonaldinhoL" title="RonaldinhoL (51 issues)"><img src="https://avatars.githubusercontent.com/u/1797392?v=4&amp;s=80" width="40" height="40" alt="RonaldinhoL" /></a>

@@ -2,101 +2,101 @@
 
 [English](README.md) | [简体中文](README_CN.md) | [繁體中文](README_ZH-HANT.md) | [日本語](README_JA.md) | [한국어](README_KO.md) | [Español](README_ES.md) | [Français](README_FR.md) | [Deutsch](README_DE.md) | [Русский](README_RU.md)
 
-⚠️ **Note: Reqable is not an open-source project. This repository is used solely for issue tracking, feature requests, and user feedback.**
+⚠️ **注意：Reqable はオープンソースプロジェクトではありません。このリポジトリはニーズ管理とユーザーフィードバックのみに使用されます。**
 
-## About
+## 概要
 
-[Reqable](https://reqable.com/) is a next-generation, all-in-one API debugging and testing platform. It offers cross-platform support, a login-free architecture, a lightweight footprint, high throughput, and an ad-free experience — all designed to streamline API workflows for developers and QA engineers. Reqable supports five major platforms: `Windows`, `macOS`, `Linux`, `Android`, and `iOS`.
+[Reqable](https://reqable.com/) は新世代の API デバッグ + API テストのワンストップソリューションです。Reqable は全プラットフォーム対応、ログイン不要、軽量、高性能、広告なしといった特長を持ち、「API をより速く、よりシンプルに」を理念に、開発者とテスターの生産性向上を支援します。現在、`Windows`、`Mac`、`Linux`、`Android`、`iOS` の 5 大プラットフォームに対応しています。
 
-Reqable combines an API traffic capture tool with a full-featured API testing client in a single, deeply integrated environment — enabling seamless capture-and-test workflows and replacing multiple standalone tools.
+Reqable = API キャプチャツール + API テストツール。両者を深く統合し、キャプチャとテストを一体化。シンプルな操作で、1 つのツールが複数のツールの役割を果たします。
 
 ![](arts/products_en.png)
 
-The majority of Reqable's features are available free of charge, with no trial period. The Community edition covers the needs of most individual developers; power users and teams may benefit from upgrading to the Premium tier for advanced capabilities.
+Reqable のほとんどの機能は無料で使用でき、試用期限はありません。コミュニティ版はライトユーザーに適しています。ヘビーユーザーの場合は、プレミアム会員の購入が必要になることがあります。
 
-Visit our official website: https://reqable.com
+公式ウェブサイトをご覧ください：https://reqable.com
 
-## Contents
+## 目次
 
-- [About](#about)
-- [API Debugging](#api-debugging)
-- [API Testing](#api-testing)
-- [MCP Support](#mcp-support)
-- [Extreme Performance](#extreme-performance)
-- [Mobile App](#mobile-app)
-- [Installation](#installation)
-- [Documentation](#documentation)
-- [Acknowledgements](#acknowledgements)
+- [概要](#概要)
+- [API デバッグ](#api-デバッグ)
+- [API テスト](#api-テスト)
+- [MCP サポート](#mcp-サポート)
+- [究極のパフォーマンス](#究極のパフォーマンス)
+- [モバイルアプリ](#モバイルアプリ)
+- [インストール](#インストール)
+- [ドキュメント](#ドキュメント)
+- [謝辞](#謝辞)
 
-# API Debugging
+# API デバッグ
 
-Reqable employs a classic MITM (Man-in-the-Middle) strategy to intercept HTTP(S) traffic. On desktop platforms, it captures traffic via system-level proxy configuration; on mobile, it leverages a local VPN. Captured traffic can be inspected and manipulated through a rich set of debugging primitives: request replay, inline editing, breakpoints, URL rewriting, custom scripting, and more.
+Reqable はクラシックな MITM（中間者）方式で HTTP(S) リクエストをキャプチャします。デスクトップではシステムプロキシを使用してトラフィックを傍受し、モバイルでは VPN を使用します。Reqable はキャプチャデータのデバッグ操作（再送、編集、ブレークポイント、リライト、スクリプトなど）をサポートしています。
 
 ![](arts/screenshot_en_01.png)
 
-# API Testing
+# API テスト
 
-Reqable provides a full-featured API client for composing, sending, and organizing `HTTP`, `WebSocket`, `SSE`, and `gRPC` (coming soon) requests. It includes API collections with folder-based organization, environment variables with scoped resolution, built-in API documentation authoring, and cloud synchronization across devices.
+Reqable は `HTTP`、`WebSocket`、`SSE`、`gRPC`（近日リリース予定）リクエストの編集、送信、管理が可能で、API コレクション、環境変数、ドキュメント管理、クラウド同期などの機能をサポートしています。
 
 ![](arts/screenshot_en_02.png)
 
-# MCP Support
+# MCP サポート
 
-Reqable ships with a built-in MCP (Model Context Protocol) server, enabling AI assistants such as Claude and GitHub Copilot to interact directly with Reqable. This unlocks AI-driven workflows for API debugging, traffic inspection, rule authoring, and automated testing.
+Reqable は内蔵 MCP サーバーを提供し、AI アシスタント（Claude、Copilot など）を Reqable に接続することで、AI 駆動の API デバッグ、トラフィック分析、ルール作成などを実現できます。
 
 ![](arts/screenshot_en_03.png)
 
-The MCP server implementation is fully open source. See the [MCP Server repository](https://github.com/reqable/reqable-mcp-server) for details.
+MCP サーバーのコードは完全にオープンソースです。詳細は [MCP Server](https://github.com/reqable/reqable-mcp-server) をご覧ください。
 
-# Extreme Performance
+# 究極のパフォーマンス
 
-Reqable is engineered with Flutter and C++, deliberately avoiding an embedded browser runtime. This architectural choice strengthens security by reducing the attack surface while yielding substantial performance gains over Electron-based alternatives.
+Reqable は Flutter と C++ で開発され、ブラウザの組み込みを排除しています。これにより高いセキュリティを実現するだけでなく、同類製品と比較して圧倒的なパフォーマンス優位性を持っています。
 
-- Millisecond-level cold-start time.
-- Installation footprint under 100 MB.
-- Typical memory consumption under 300 MB during active use.
+- 高速、ミリ秒レベルの起動。
+- インストールサイズが小さく、100M 未満。
+- メモリ使用量が低く、日常的に 300M 未満。
 
-Packet capture performance benchmarks
+パケットキャプチャパフォーマンスベンチマーク
 
 ![](arts/benchmark_en_02.png)
 
-API client performance benchmarks
+API クライアントパフォーマンスベンチマーク
 
 ![](arts/benchmark_en_01.png)
 
-> Benchmarks were conducted on an Apple MacBook Pro with the M5 chip. On lower-specification hardware, Reqable's performance delta is even more pronounced.
+> ベンチマークは M5 チップ搭載の Apple MacBook Pro で実施されました。ハードウェア性能の低いデバイスでは、Reqable のパフォーマンス優位性がさらに顕著になります。
 
-# Mobile App
+# モバイルアプリ
 
-The mobile edition maintains feature parity with the desktop version, offering both API debugging and API testing capabilities on the go. It supports adding a desktop peer via QR code scanning, enabling mobile traffic to be forwarded to the desktop for deeper inspection and manipulation.
+モバイル版とデスクトップ版の機能はほぼ同等で、API デバッグと API テストの両方をサポートしています。また、QR コードをスキャンしてパソコンを追加し、モバイルトラフィックをパソコンに転送して操作することができます。
 
-With an optional account login, cloud synchronization can be enabled to automatically replicate data across all connected devices.
+ログイン後にクラウドデータストレージを有効にすると、異なるデバイス間でデータを自動同期できます。
 
 ![](arts/screenshot_en_04.png)
 
-> Breakpoint, rewrite, and scripting features are currently unavailable on mobile platforms due to platform-level security policies.
+> ブレークポイント、リライト、スクリプト機能は悪用の懸念があるため、現在提供されていません。
 
-# Installation
+# インストール
 
-| Platform | Architecture | Format | Download & Install | Notes |
+| プラットフォーム | アーキテクチャ | 形式 | ダウンロードとインストール | 備考 |
 | ---- | ---- | ---- | ---- | ---- |
-| **Windows** | x86_64 | exe | [Download](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=exe&locale=en-US) | Installer version (recommended), supports `Windows 7+`. |
-| **Windows** | x86_64 | zip | [Download](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=zip&locale=en-US) | Portable version, supports `Windows 7+`. |
-| **Mac** | universal | - | brew install reqable | Requires macOS `11.0` or later. |
-| **Mac** | Intel Chip | dmg | [Download](https://app.reqable.com/download?platform=macos&arch=x86_64&ext=dmg&locale=en-US) | Intel chip, requires macOS `11.0` or later. |
-| **Mac** | Apple Silicon | dmg | [Download](https://app.reqable.com/download?platform=macos&arch=arm64&ext=dmg&locale=en-US) | M-series chip, requires macOS `11.0` or later. |
-| **Linux** | x86_64 | deb | [Download](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=deb&locale=en-US) | Supports `Ubuntu`, `Debian`, and other distributions. Requires `GTK 3.0`. |
-| **Linux** | x86_64 | AppImage | [Download](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=AppImage&locale=en-US) | Supports `Ubuntu`, `Debian`, and other distributions. Requires `GTK 3.0`. |
-| **Android** | universal | - | [Google Play](https://play.google.com/store/apps/details?id=com.reqable.android) | Requires `Android 5.0` or later. |
-| **Android** | arm64-v8a | apk | [Download](https://app.reqable.com/download?platform=android&arch=arm64&ext=apk&locale=en-US) | Requires `Android 5.0` or later. |
-| **Android** | armeabi-v7a | apk | [Download](https://app.reqable.com/download?platform=android&arch=arm&ext=apk&locale=en-US) | Requires `Android 5.0` or later. |
-| **Android** | x86_64 | apk | [Download](https://app.reqable.com/download?platform=android&arch=x86_64&ext=apk&locale=en-US) | Requires `Android 5.0` or later. |
-| **iOS** | arm64 | - | [App Store](https://apps.apple.com/cn/app/id6473166828) | Requires `iOS 13.0` or later. |
+| **Windows** | x86_64 | exe | [ダウンロード](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=exe&locale=en-US) | インストーラ版（推奨）、`Windows 7+` 対応。 |
+| **Windows** | x86_64 | zip | [ダウンロード](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=zip&locale=en-US) | ポータブル版、`Windows 7+` 対応。 |
+| **Mac** | universal | - | brew install reqable | macOS `11.0` 以降が必要。 |
+| **Mac** | Intel Chip | dmg | [ダウンロード](https://app.reqable.com/download?platform=macos&arch=x86_64&ext=dmg&locale=en-US) | Intel チップ、macOS `11.0` 以降が必要。 |
+| **Mac** | Apple Silicon | dmg | [ダウンロード](https://app.reqable.com/download?platform=macos&arch=arm64&ext=dmg&locale=en-US) | M シリーズチップ、macOS `11.0` 以降が必要。 |
+| **Linux** | x86_64 | deb | [ダウンロード](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=deb&locale=en-US) | `Ubuntu`、`Debian` などのディストリビューションに対応。`GTK 3.0` が必要。 |
+| **Linux** | x86_64 | AppImage | [ダウンロード](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=AppImage&locale=en-US) | `Ubuntu`、`Debian` などのディストリビューションに対応。`GTK 3.0` が必要。 |
+| **Android** | universal | - | [Google Play](https://play.google.com/store/apps/details?id=com.reqable.android) | `Android 5.0` 以降が必要。 |
+| **Android** | arm64-v8a | apk | [ダウンロード](https://app.reqable.com/download?platform=android&arch=arm64&ext=apk&locale=en-US) | `Android 5.0` 以降が必要。 |
+| **Android** | armeabi-v7a | apk | [ダウンロード](https://app.reqable.com/download?platform=android&arch=arm&ext=apk&locale=en-US) | `Android 5.0` 以降が必要。 |
+| **Android** | x86_64 | apk | [ダウンロード](https://app.reqable.com/download?platform=android&arch=x86_64&ext=apk&locale=en-US) | `Android 5.0` 以降が必要。 |
+| **iOS** | arm64 | - | [App Store](https://apps.apple.com/cn/app/id6473166828) | `iOS 13.0` 以降が必要。 |
 
-## Documentation
+## ドキュメント
 https://reqable.com/en-US/docs/introduction
 
-## Acknowledgements
+## 謝辞
 
 <p align="left">
   <a href="https://github.com/RonaldinhoL" title="RonaldinhoL (51 issues)"><img src="https://avatars.githubusercontent.com/u/1797392?v=4&amp;s=80" width="40" height="40" alt="RonaldinhoL" /></a>

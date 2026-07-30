@@ -2,101 +2,101 @@
 
 [English](README.md) | [简体中文](README_CN.md) | [繁體中文](README_ZH-HANT.md) | [日本語](README_JA.md) | [한국어](README_KO.md) | [Español](README_ES.md) | [Français](README_FR.md) | [Deutsch](README_DE.md) | [Русский](README_RU.md)
 
-⚠️ **Note: Reqable is not an open-source project. This repository is used solely for issue tracking, feature requests, and user feedback.**
+⚠️ **Hinweis: Reqable ist kein Open-Source-Projekt. Dieses Repository dient ausschließlich der Problemverfolgung, Funktionsanfragen und Benutzerfeedback.**
 
-## About
+## Über
 
-[Reqable](https://reqable.com/) is a next-generation, all-in-one API debugging and testing platform. It offers cross-platform support, a login-free architecture, a lightweight footprint, high throughput, and an ad-free experience — all designed to streamline API workflows for developers and QA engineers. Reqable supports five major platforms: `Windows`, `macOS`, `Linux`, `Android`, and `iOS`.
+[Reqable](https://reqable.com/) ist eine All-in-One-Plattform der nächsten Generation für API-Debugging und -Tests. Sie bietet plattformübergreifende Unterstützung, eine anmeldefreie Architektur, einen geringen Ressourcenverbrauch, hohen Durchsatz und ein werbefreies Erlebnis — alles darauf ausgelegt, API-Workflows für Entwickler und QA-Ingenieure zu optimieren. Reqable unterstützt fünf große Plattformen: `Windows`, `macOS`, `Linux`, `Android` und `iOS`.
 
-Reqable combines an API traffic capture tool with a full-featured API testing client in a single, deeply integrated environment — enabling seamless capture-and-test workflows and replacing multiple standalone tools.
+Reqable vereint ein API-Traffic-Capture-Tool mit einem voll ausgestatteten API-Testclient in einer einzigen, tief integrierten Umgebung — für nahtlose Capture-and-Test-Workflows und als Ersatz für mehrere eigenständige Tools.
 
 ![](arts/products_en.png)
 
-The majority of Reqable's features are available free of charge, with no trial period. The Community edition covers the needs of most individual developers; power users and teams may benefit from upgrading to the Premium tier for advanced capabilities.
+Der Großteil der Funktionen von Reqable ist kostenlos und ohne Testzeitraum verfügbar. Die Community Edition deckt die Anforderungen der meisten Einzelentwickler ab; Power-User und Teams können von einem Upgrade auf die Premium-Stufe profitieren, um erweiterte Funktionen zu erhalten.
 
-Visit our official website: https://reqable.com
+Besuchen Sie unsere offizielle Website: https://reqable.com
 
-## Contents
+## Inhaltsverzeichnis
 
-- [About](#about)
-- [API Debugging](#api-debugging)
-- [API Testing](#api-testing)
-- [MCP Support](#mcp-support)
+- [Über](#über)
+- [API-Debugging](#api-debugging)
+- [API-Tests](#api-tests)
+- [MCP-Unterstützung](#mcp-unterstützung)
 - [Extreme Performance](#extreme-performance)
 - [Mobile App](#mobile-app)
 - [Installation](#installation)
-- [Documentation](#documentation)
-- [Acknowledgements](#acknowledgements)
+- [Dokumentation](#dokumentation)
+- [Danksagungen](#danksagungen)
 
-# API Debugging
+# API-Debugging
 
-Reqable employs a classic MITM (Man-in-the-Middle) strategy to intercept HTTP(S) traffic. On desktop platforms, it captures traffic via system-level proxy configuration; on mobile, it leverages a local VPN. Captured traffic can be inspected and manipulated through a rich set of debugging primitives: request replay, inline editing, breakpoints, URL rewriting, custom scripting, and more.
+Reqable setzt auf eine klassische MITM-Strategie (Man-in-the-Middle), um HTTP(S)-Traffic abzufangen. Auf Desktop-Plattformen erfasst es den Traffic über systemweite Proxy-Konfiguration; auf Mobilgeräten nutzt es ein lokales VPN. Der erfasste Traffic kann mithilfe einer umfangreichen Sammlung von Debugging-Primitiven inspiziert und manipuliert werden: Request-Wiederholung, Inline-Bearbeitung, Haltepunkte, URL-Rewriting, benutzerdefiniertes Scripting und mehr.
 
 ![](arts/screenshot_en_01.png)
 
-# API Testing
+# API-Tests
 
-Reqable provides a full-featured API client for composing, sending, and organizing `HTTP`, `WebSocket`, `SSE`, and `gRPC` (coming soon) requests. It includes API collections with folder-based organization, environment variables with scoped resolution, built-in API documentation authoring, and cloud synchronization across devices.
+Reqable bietet einen voll ausgestatteten API-Client zum Erstellen, Senden und Organisieren von `HTTP`-, `WebSocket`-, `SSE`- und `gRPC`-Anfragen (demnächst verfügbar). Er umfasst ordnerbasierte API-Sammlungen, Umgebungsvariablen mit Bereichsauflösung, integrierte API-Dokumentationserstellung sowie Cloud-Synchronisation über Geräte hinweg.
 
 ![](arts/screenshot_en_02.png)
 
-# MCP Support
+# MCP-Unterstützung
 
-Reqable ships with a built-in MCP (Model Context Protocol) server, enabling AI assistants such as Claude and GitHub Copilot to interact directly with Reqable. This unlocks AI-driven workflows for API debugging, traffic inspection, rule authoring, and automated testing.
+Reqable verfügt über einen integrierten MCP-Server (Model Context Protocol), der es KI-Assistenten wie Claude und GitHub Copilot ermöglicht, direkt mit Reqable zu interagieren. Dies erschließt KI-gestützte Workflows für API-Debugging, Traffic-Inspektion, Regelerstellung und automatisierte Tests.
 
 ![](arts/screenshot_en_03.png)
 
-The MCP server implementation is fully open source. See the [MCP Server repository](https://github.com/reqable/reqable-mcp-server) for details.
+Die MCP-Server-Implementierung ist vollständig quelloffen. Weitere Details finden Sie im [MCP Server Repository](https://github.com/reqable/reqable-mcp-server).
 
 # Extreme Performance
 
-Reqable is engineered with Flutter and C++, deliberately avoiding an embedded browser runtime. This architectural choice strengthens security by reducing the attack surface while yielding substantial performance gains over Electron-based alternatives.
+Reqable wurde mit Flutter und C++ entwickelt und verzichtet bewusst auf eine eingebettete Browser-Laufzeitumgebung. Diese architektonische Entscheidung stärkt die Sicherheit durch Reduzierung der Angriffsfläche und bietet gleichzeitig erhebliche Leistungsvorteile gegenüber Electron-basierten Alternativen.
 
-- Millisecond-level cold-start time.
-- Installation footprint under 100 MB.
-- Typical memory consumption under 300 MB during active use.
+- Kaltstartzeit im Millisekundenbereich.
+- Installationsgröße unter 100 MB.
+- Typische Speichernutzung unter 300 MB bei aktiver Nutzung.
 
-Packet capture performance benchmarks
+Paketerfassungs-Leistungsbenchmarks
 
 ![](arts/benchmark_en_02.png)
 
-API client performance benchmarks
+API-Client-Leistungsbenchmarks
 
 ![](arts/benchmark_en_01.png)
 
-> Benchmarks were conducted on an Apple MacBook Pro with the M5 chip. On lower-specification hardware, Reqable's performance delta is even more pronounced.
+> Die Benchmarks wurden auf einem Apple MacBook Pro mit M5-Chip durchgeführt. Auf Hardware mit niedrigeren Spezifikationen ist der Leistungsvorteil von Reqable noch deutlicher.
 
 # Mobile App
 
-The mobile edition maintains feature parity with the desktop version, offering both API debugging and API testing capabilities on the go. It supports adding a desktop peer via QR code scanning, enabling mobile traffic to be forwarded to the desktop for deeper inspection and manipulation.
+Die mobile Edition bietet Funktionsparität mit der Desktop-Version und ermöglicht sowohl API-Debugging als auch API-Tests für unterwegs. Sie unterstützt das Hinzufügen eines Desktop-Geräts per QR-Code-Scan, sodass mobiler Traffic zur tiefergehenden Inspektion und Bearbeitung an den Desktop weitergeleitet werden kann.
 
-With an optional account login, cloud synchronization can be enabled to automatically replicate data across all connected devices.
+Mit einer optionalen Kontoanmeldung kann die Cloud-Synchronisation aktiviert werden, um Daten automatisch über alle verbundenen Geräte hinweg zu replizieren.
 
 ![](arts/screenshot_en_04.png)
 
-> Breakpoint, rewrite, and scripting features are currently unavailable on mobile platforms due to platform-level security policies.
+> Haltepunkte, Rewriting und Scripting-Funktionen sind aufgrund plattformspezifischer Sicherheitsrichtlinien derzeit auf mobilen Plattformen nicht verfügbar.
 
 # Installation
 
-| Platform | Architecture | Format | Download & Install | Notes |
+| Plattform | Architektur | Format | Download & Installation | Hinweise |
 | ---- | ---- | ---- | ---- | ---- |
-| **Windows** | x86_64 | exe | [Download](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=exe&locale=en-US) | Installer version (recommended), supports `Windows 7+`. |
-| **Windows** | x86_64 | zip | [Download](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=zip&locale=en-US) | Portable version, supports `Windows 7+`. |
-| **Mac** | universal | - | brew install reqable | Requires macOS `11.0` or later. |
-| **Mac** | Intel Chip | dmg | [Download](https://app.reqable.com/download?platform=macos&arch=x86_64&ext=dmg&locale=en-US) | Intel chip, requires macOS `11.0` or later. |
-| **Mac** | Apple Silicon | dmg | [Download](https://app.reqable.com/download?platform=macos&arch=arm64&ext=dmg&locale=en-US) | M-series chip, requires macOS `11.0` or later. |
-| **Linux** | x86_64 | deb | [Download](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=deb&locale=en-US) | Supports `Ubuntu`, `Debian`, and other distributions. Requires `GTK 3.0`. |
-| **Linux** | x86_64 | AppImage | [Download](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=AppImage&locale=en-US) | Supports `Ubuntu`, `Debian`, and other distributions. Requires `GTK 3.0`. |
-| **Android** | universal | - | [Google Play](https://play.google.com/store/apps/details?id=com.reqable.android) | Requires `Android 5.0` or later. |
-| **Android** | arm64-v8a | apk | [Download](https://app.reqable.com/download?platform=android&arch=arm64&ext=apk&locale=en-US) | Requires `Android 5.0` or later. |
-| **Android** | armeabi-v7a | apk | [Download](https://app.reqable.com/download?platform=android&arch=arm&ext=apk&locale=en-US) | Requires `Android 5.0` or later. |
-| **Android** | x86_64 | apk | [Download](https://app.reqable.com/download?platform=android&arch=x86_64&ext=apk&locale=en-US) | Requires `Android 5.0` or later. |
-| **iOS** | arm64 | - | [App Store](https://apps.apple.com/cn/app/id6473166828) | Requires `iOS 13.0` or later. |
+| **Windows** | x86_64 | exe | [Download](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=exe&locale=en-US) | Installer-Version (empfohlen), unterstützt `Windows 7+`. |
+| **Windows** | x86_64 | zip | [Download](https://app.reqable.com/download?platform=windows&arch=x86_64&ext=zip&locale=en-US) | Portable-Version, unterstützt `Windows 7+`. |
+| **Mac** | universal | - | brew install reqable | Erfordert macOS `11.0` oder neuer. |
+| **Mac** | Intel Chip | dmg | [Download](https://app.reqable.com/download?platform=macos&arch=x86_64&ext=dmg&locale=en-US) | Intel-Chip, erfordert macOS `11.0` oder neuer. |
+| **Mac** | Apple Silicon | dmg | [Download](https://app.reqable.com/download?platform=macos&arch=arm64&ext=dmg&locale=en-US) | M-Serie-Chip, erfordert macOS `11.0` oder neuer. |
+| **Linux** | x86_64 | deb | [Download](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=deb&locale=en-US) | Unterstützt `Ubuntu`, `Debian` und andere Distributionen. Erfordert `GTK 3.0`. |
+| **Linux** | x86_64 | AppImage | [Download](https://app.reqable.com/download?platform=linux&arch=x86_64&ext=AppImage&locale=en-US) | Unterstützt `Ubuntu`, `Debian` und andere Distributionen. Erfordert `GTK 3.0`. |
+| **Android** | universal | - | [Google Play](https://play.google.com/store/apps/details?id=com.reqable.android) | Erfordert `Android 5.0` oder neuer. |
+| **Android** | arm64-v8a | apk | [Download](https://app.reqable.com/download?platform=android&arch=arm64&ext=apk&locale=en-US) | Erfordert `Android 5.0` oder neuer. |
+| **Android** | armeabi-v7a | apk | [Download](https://app.reqable.com/download?platform=android&arch=arm&ext=apk&locale=en-US) | Erfordert `Android 5.0` oder neuer. |
+| **Android** | x86_64 | apk | [Download](https://app.reqable.com/download?platform=android&arch=x86_64&ext=apk&locale=en-US) | Erfordert `Android 5.0` oder neuer. |
+| **iOS** | arm64 | - | [App Store](https://apps.apple.com/cn/app/id6473166828) | Erfordert `iOS 13.0` oder neuer. |
 
-## Documentation
+## Dokumentation
 https://reqable.com/en-US/docs/introduction
 
-## Acknowledgements
+## Danksagungen
 
 <p align="left">
   <a href="https://github.com/RonaldinhoL" title="RonaldinhoL (51 issues)"><img src="https://avatars.githubusercontent.com/u/1797392?v=4&amp;s=80" width="40" height="40" alt="RonaldinhoL" /></a>
